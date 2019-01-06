@@ -2,6 +2,8 @@
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    public float speed = 15;
+
     private void FixedUpdate()
     {
         // get user input into x and z
@@ -12,6 +14,6 @@ public class PlayerController : MonoBehaviour {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
 
         // add force x/z axis
-        rigidbody.AddForce(x, 0, z);
+        rigidbody.AddForce(x * speed, 0, z * speed);
     }
 }
